@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Run the broadwayd daemon and point nginx to it
 /usr/local/bin/start
 
@@ -9,4 +10,5 @@ dbus-launch gsettings set org.virt-manager.virt-manager.connections autoconnect 
 dbus-launch gsettings set org.virt-manager.virt-manager xmleditor-enabled true
 tmux send-keys -t ttyd dbus-launch\ virt-manager\ --no-fork Enter
 trap 'exit 0' SIGTERM
-while true; do sleep 1; done
+sleep infinity
+# while true; do sleep 1; done
