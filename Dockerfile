@@ -7,7 +7,7 @@ ENV HOSTS="[]"
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends virt-manager dbus-x11 libglib2.0-bin gir1.2-spiceclientgtk-3.0 ssh at-spi2-core
-RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/*
+RUN apt-get autoclean && apt-get autoremove && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /root/.ssh
 RUN echo "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
